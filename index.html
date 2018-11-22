@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LESIO- Lekki elegancki skrypt identyfikujący ONU</title>
+    <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>LESIO- Lekki elegancki skrypt identyfikujący ONU</h1>
+        <img id="nasz-mistrz" class="animated" src="nasz-mistrz.png">
+    </header>
+    <main>
+        <button class="btn" data-clipboard-text="show onu unauthentication">Szukaj zagubionej w systemie rurek ONU</button>
+        <section>
+            <h2>1. Znajdź końcówkę, którą podłączyłeś do systemu rurek światłowodowych</h2>
+            
+        </section>
+        
+        <section>
+            <h2>2. Jeśli znalazłeś ONU wpisz numer karty oraz pon:</h2>
+            <form id="getCardPon">
+                <b>epon-olt_0/</b><input class="setLocalizationOnu" id="card_number" type="number" value="1" min="1" max="10"><b>/</b><input class="setLocalizationOnu" id="pon_number" type="number" value="1" min="1" max="4">
+            </form>
+        </section>
+        
+        <section>
+            <h2>3. Znajdź wolne miejsce na ponie</h2>
+            <button class="patrick btn" id="button-search-free-space" data-clipboard-text="show onu all-status epon-olt_0/1/1">Szukaj miejsca</button>
+        </section>
+    </main>
+    <script src="main.js"></script>
+    <script src="node_modules/clipboard/dist/clipboard.min.js"></script>
+        <script>
+        new ClipboardJS('.btn');
+    </script>
+</body>
+</html>
