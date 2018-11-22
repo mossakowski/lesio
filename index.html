@@ -33,13 +33,28 @@
         
         <section>
             <h2>4. Usuń koncówkę! (jeśli chcesz podmienić)</h2>
-            <form id="deleteOnu">
+            <form id="form-delete-onu">
                 <label>Podaj nr onu</label>
-                <input type="number" min="1" max="64">
+                <input type="number" min="1" max="64" value="1">
             </form>
-            <button class="patrick btn" data-clipboard-text="show onu all-status epon-olt_0/1/1">usuń onu</button>            
-            
+            <button id="button-remove-onu" class="patrick btn" data-clipboard-text="no onu 1">usuń onu</button>             
         </section>
+        
+        <section>
+            <h2>Dodanie onu do bazy</h2>
+            <form id="form-add-onu">
+                nr onu <input type="number" min="1" max="64" value="1">
+                typ
+                <select>
+                    <option value="ZTE-F401" selected="selected">Jedno port</option>
+                    <option value="ZTE-F420">Cztero port</option>
+                </select>
+                mac <input type="text">                
+            </form>
+            <button id="button-add-onu" class="patrick btn" data-clipboard-text="onu 1 type ZTE-F401 mac 0000.0000.0000 ip-cfg  static">Dodaj onu</button>              
+        </section>
+        
+        
         
         
     </main>
