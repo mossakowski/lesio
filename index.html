@@ -14,27 +14,38 @@
         <img id="nasz-mistrz" class="animated" src="nasz-mistrz.png">
     </header>
     <main>
-        <button class="btn" data-clipboard-text="show onu unauthentication">Szukaj zagubionej w systemie rurek ONU</button>
         <section>
             <h2>1. Znajdź końcówkę, którą podłączyłeś do systemu rurek światłowodowych</h2>
-            
+            <button class="patrick btn" data-clipboard-text="show onu unauthentication">Szukaj zagubionej w systemie rurek ONU</button>
         </section>
-        
+
         <section>
             <h2>2. Jeśli znalazłeś ONU wpisz numer karty oraz pon:</h2>
             <form id="getCardPon">
                 <b>epon-olt_0/</b><input class="setLocalizationOnu" id="card_number" type="number" value="1" min="1" max="10"><b>/</b><input class="setLocalizationOnu" id="pon_number" type="number" value="1" min="1" max="4">
             </form>
         </section>
-        
+
         <section>
             <h2>3. Znajdź wolne miejsce na ponie</h2>
             <button class="patrick btn" id="button-search-free-space" data-clipboard-text="show onu all-status epon-olt_0/1/1">Szukaj miejsca</button>
         </section>
+        
+        <section>
+            <h2>4. Usuń koncówkę! (jeśli chcesz podmienić)</h2>
+            <form id="deleteOnu">
+                <label>Podaj nr onu</label>
+                <input type="number" min="1" max="64">
+            </form>
+            <button class="patrick btn" data-clipboard-text="show onu all-status epon-olt_0/1/1">usuń onu</button>            
+            
+        </section>
+        
+        
     </main>
     <script src="main.js"></script>
     <script src="node_modules/clipboard/dist/clipboard.min.js"></script>
-        <script>
+    <script>
         new ClipboardJS('.btn');
     </script>
 </body>
