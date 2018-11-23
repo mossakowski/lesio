@@ -1,19 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-  font-family: 'Helvenica';
+    font-family: 'Helvetica';
+    background: #1d1f21;
+    color: #fff;
+
 }
 
 h1 {
-  text-align: center;
+    text-align: center;
 }
 
 header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+
+#section-four-port-onu {
+    display: none;
+}
+
+#div-vlan-list {
+    display: none;
+    background: #373a3c;
+    position: absolute;
+    top: 10vh;
+    width: 100%;
+    padding: 10px;
+}
+
+#div-vlan-list > a {
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.col > a {
+    text-decoration: none;
+    color: white;
 }

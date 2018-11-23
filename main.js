@@ -65,13 +65,24 @@
 
         //get onu type and update commend
         form[1].addEventListener('click', function () {
+            var sectionOnePort = document.getElementById('section-one-port-onu');
+            var sectionFourPort = document.getElementById('section-four-port-onu');
             let onuType = form[1].value;
             let commend = btn.getAttribute('data-clipboard-text').split(' ');
             commend[3] = onuType;
             btn.setAttribute('data-clipboard-text', commend.join(' '));
+            
+            //display section for 1port or 4 port
+            if(onuType == 'ZTE-F401') {
+                sectionFourPort.style.display = "none";
+                sectionOnePort.style.display = "block";
+            }
+            
+            if(onuType == 'ZTE-F420') {
+                sectionFourPort.style.display = "block";
+                sectionOnePort.style.display = "none";
+            }            
         });
-
-        console.log(form);
 
         //get onu mac and update commend
         for (let i = 0; i < arrayEvents.length; i++) {
@@ -84,8 +95,34 @@
         }
     }
 
+    function vlanList() {
+        var vlanList = document.getElementById('div-vlan-list');
+        var inputVlanId = document.getElementById('input-vlan-id')
+        let vlanId = document.querySelectorAll('[data-vlan-id]');
+        let btnClose = document.getElementById('vlan-list-close');  
+        let aSelectVlan = document.getElementById('a-select-vlan');  
+        
+        //open vlan list
+        aSelectVlan.addEventListener('click', function() {
+            vlanList.style.display = "block";
+        });
+        //close button
+        btnClose.addEventListener('click', function() {           
+            vlanList.style.display = "none";
+        });
+        
+        //select vlan and update input
+        for(let i=0;i<vlanId.length;i++) {
+            vlanId[i].addEventListener('click', function() {
+                inputVlanId.value = this.getAttribute('data-vlan-id');
+                vlanList.style.display = "none";
+            });
+        }
+    }
+   
     addAnimation();
     updateOltPon();
     removeOnu();
     addOnu();
+    vlanList();
 })();
